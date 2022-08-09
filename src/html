@@ -1,0 +1,26 @@
+let body = document.getElementsByTagName("body")[0];
+let completerWidget = document.createElement('div');
+completerWidget.className = 'jp-Completer jp-HoverBox';
+body.appendChild(completerWidget);
+
+let ul = document.createElement('ul');
+ul.className = 'jp-Completer-list';
+
+completerWidget.appendChild(ul);
+
+// creates an entry in the autocomplete tooltip
+let li = document.createElement('li');
+li.className = "jp-Completer-item jp-mod-active";
+ul.appendChild(li);
+let code = document.createElement('code');
+code.className = "jp-Completer-match";
+code.innerHTML = "impMagic";
+li.appendChild(code);
+
+let li2 = document.createElement('li');
+li2.className = "jp-Completer-item";
+ul.appendChild(li2);
+let code2 = document.createElement('code');
+code2.className = "jp-Completer-match";
+code2.innerHTML = "impScience";
+li2.appendChild(code2);

@@ -1,0 +1,15 @@
+{
+    "title": "Notebook Completer",
+    "description": "Notebook completer settings.",
+    "jupyter.lab.shortcuts": [
+      {
+        "command": "completer:invoke-notebook",
+        "keys": ["Tab"],
+        "selector": ".jp-FileEditor .jp-mod-completer-enabled"
+      }
+    ],
+    "properties": {},
+    "additionalProperties": false,
+    "type": "object"
+  }
+  

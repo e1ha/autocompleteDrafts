@@ -1,0 +1,41 @@
+<div contenteditable>Hello, press TAB to replace this WORD<br>Also press TAB after this ONE</div>
+
+<script>
+    var newText = 'hello\nnewline';
+var newHtml = '<b>test</b> and<br>a <a href="hjkh">link</a>';
+
+document.addEventListener("keydown", function(e) {
+  var elt = e.target;
+  /*  if (elt.tagName.toLowerCase() === 'textarea' || elt.isContentEditable)
+   {  */
+  if (e.keyCode == 9) {
+    e.preventDefault();
+    elt.focus() ;
+    sel = window.getSelection();
+    //console.log("sel: ", sel.toString());
+  
+    sel.modify("extend", "backward", "word");
+    //console.log("sel.tostring: ", sel.toString());
+    range = sel.getRangeAt(0);
+    console.log("range start con: ", range.startContainer);
+    console.log("range end con: ", range.endContainer);
+    console.log("range start offset: ", range.startOffset);
+    console.log("range end offset: ", range.endOffset);
+    console.log("range commanAncestorContainer: ", range.commonAncestorContainer);
+
+    // console.log("range collapsed: ", range.collapsed);
+    //console.log("sth: ", range.toString().trim());
+  /*range.deleteContents();
+    var el = document.createElement("div");
+    el.innerHTML = newText;
+    var frag = document.createDocumentFragment(),
+      node;
+    while (node = el.firstChild) {
+      frag.appendChild(node); 
+    }     
+    range.insertNode(frag);
+    range.collapse();*/
+  }
+});
+
+</script>
